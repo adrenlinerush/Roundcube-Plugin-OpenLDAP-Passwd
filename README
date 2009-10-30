@@ -1,0 +1,43 @@
+**************************************
+TITLE: Roundcube Webmail Change Password (OpenLDAP w/ Samba and Password Rules)
+WRITTEN BY: adrenlinerush
+LAST MOD: 10/30/09
+
+RELEASED UNDER GPL LICENSE 
+**************************************
+Based on the password plugin that comes with .3 of roundcube
+
+Modified the password.js to call Seven Levithan's password rules function.  
+Rules are right there in password.js towards the bottom. 
+
+Created a new Driver Class called alliance (we're using star wars themes at work and thats the domain that it was changing)
+
+will want to configure changeOpenLDAPPwd.config.php to suit your needs
+
+whatever user you update it changes the following
+  sambaNTPassword
+  sambaLMPassword
+  sambaPwdLastSet
+  sambaPwdMustChange
+
+  userPassword
+  shadowLastChange
+
+note that it creates a SSHA1 hash for userPassword
+
+
+New files from me:
+  changeOpenLDAPPwd.class.php
+  changeOpenLDAPPwd.config.php
+  changeOpenLDAPPwd.validate.php
+  csLogging.class.php
+  sambahash.php
+
+Added but borrowed:
+  passwordrules.js
+
+Modified from original plugin:
+  password.js
+  password.php
+
+
